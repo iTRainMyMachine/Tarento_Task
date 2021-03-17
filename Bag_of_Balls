@@ -1,0 +1,26 @@
+import random
+
+
+def two_at_a_time(TotTrials):
+    '''
+    
+    Trail of drawing 2 balls out of a bag containing
+    A number of red, B number of green and C number of blue balls.
+    Balls are not replaced once drawn. the fraction of times 2 
+    balls of the same color were drawn in the first 3 draws.
+    '''
+   
+    counter = 0
+    for i in range(TotTrials):
+        
+        #considering A,B,C as 10,11,12 repectively for reference
+        
+        bag = ['R', 'R', 'R', 'R','R', 'R', 'R', 'R','R', 'R','G', 'G', 'G', 'G','G', 'G', 'G', 'G','G', 'G', 'G','B','B','B','B','B','B','B','B','B','B','B','B']
+        picks = []
+        for j in range(2):
+            k = random.choice(bag)
+            picks.append(k)
+            bag.remove(k)
+        if picks[0] == picks[1]  :
+            counter += 1
+    return counter/TotTrials
